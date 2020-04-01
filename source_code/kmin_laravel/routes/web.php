@@ -19,134 +19,63 @@ Route::get('/', function () {
 
 
  // Admin
-Route::get('/Admin/Kiemduyet',function () {
-	return view('/Admin/Kiemduyet',['name'=>' Kiểm Duyệt !!!']);
+Route::group(['prefix'=>'/Admin'],function(){
+	Route::get('/Kiemduyet','ControllerName@kiemduyet');
+	Route::get('/login','ControllerName@login');
+	Route::get('/logout','ControllerName@logout');
+	Route::get('/Thongtin_member','ControllerName@thongtin');
 });
 
-Route::get('/Admin/login',function () {
-	return view('/Admin/login',['name'=>' Login !!!']);
+
+Route::get('/User/index',function()
+{
+	return view('/User/index');
 });
 
-Route::get('/Admin/logout',function () {
-	return view('/Admin/logout',['name'=>' Logout !!!']);
+Route::get('/User/profile',function()
+{
+	return view('/User/profile');
 });
 
-Route::get('/Admin/Thongtin_member',function () {
-	return view('/Admin/Thongtin_member',['name'=>' Thông tin Member !!!']);
-});
 
-Route::get('/Admin/Thongtin_user',function () {
-	return view('/Admin/Thongtin_user',['name'=>' Thông tin User  !!!']);
-});
 
-Route::get('/Admin/Traodoi_member',function () {
-	return view('/Admin/Traodoi_member',['name'=>'Traodoi_member !!!']);
-});
+
 
 
 
 // Browser
-Route::get('/Browser/Doisong',function () {
-	return view ('/Browser/Doisong',['name'=>' Doisong !!!']);
+Route::group(['prefix'=>'/Browser'],function(){
+		Route::get('/Doisong','ControllerName@doisong');
+		Route::get('/Dulich','ControllerName@dulic');
+		Route::get('/Giaitri','ControllerName@giaitri');
+		Route::get('/Giaoduc','ControllerName@giaoduc');
+		Route::get('/Gocnhin','ControllerName@gocnhin');
+		Route::get('/Khoahoc','ControllerName@khoahoc');
+		Route::get('/Kinhdoanh','ControllerName@kinhdoanh');
+		Route::get('/Phapluat','ControllerName@phapluat');
+		Route::get('/Sohoa','ControllerName@sohoa');
+		Route::get('/Suckhoe','ControllerName@suckhoe');
+		Route::get('/Tamsu','ControllerName@tamsu');
+		Route::get('/Thegioi','ControllerName@thegioi');
+		Route::get('/Thethao','ControllerName@thethao');
+		Route::get('//Thoisu','ControllerName@thoisu');
+		Route::get('/Xe&doisong','ControllerName@xe');
+		Route::get('/Ykien','ControllerName@ykien');
+		
 });
-
-Route::get('/Browser/Dulich',function () {
-	return view ('/Browser/Dulich',['name'=>' Dulich !!!']);
-});
-
-Route::get('/Browser/Giaitri',function () {
-	return view ('/Browser/Giaitri',['name'=>' Giaitri !!!']);
-});
-
-Route::get('/Browser/Giaoduc',function () {
-	return view ('/Browser/Giaoduc',['name'=>' Giaoduc !!!']);
-});
-
-Route::get('/Browser/Gocnhin',function () {
-	return view ('/Browser/Gocnhin',['name'=>' Gocnhin !!!']);
-});
-
-Route::get('/Browser/Khoahoc',function () {
-	return view ('/Browser/Khoahoc',['name'=>' Khoahoc !!!']);
-});
-
-Route::get('/Browser/Kinhdoanh',function () {
-	return view ('/Browser/Kinhdoanh',['name'=>' Kinhdoanh !!!']);
-});
-
-Route::get('/Browser/Phapluat',function () {
-	return view ('/Browser/Phapluat',['name'=>' Phapluat !!!']);
-});
-
-Route::get('/Browser/Sohoa',function () {
-	return view ('/Browser/Sohoa',['name'=>' Sohoa !!!']);
-});
-
-
-Route::get('/Browser/Suckhoe',function () {
-	return view ('/Browser/Suckhoe',['name'=>' Suckhoe !!!']);
-});
-
-Route::get('/Browser/Tamsu',function () {
-	return view ('/Browser/Tamsu',['name'=>'Tamsu !!!']);
-});
-
-Route::get('/Browser/Thegioi',function () {
-	return view ('/Browser/Thegioi',['name'=>' Thegioi !!!']);
-});
-
-Route::get('/Browser/Thethao',function () {
-	return view ('/Browser/Thethao',['name'=>' Thethao !!!']);
-});
-
-Route::get('/Browser/Thoisu',function () {
-	return view ('/Browser/Thoisu',['name'=>' Thời sự !!!']);
-});
-
-Route::get('/Browser/Xe&doisong',function () {
-	return view ('/Browser/Xe&doisong',['name'=>' Xe và Doisong !!!']);
-});
-
-Route::get('/Browser/Ykien',function () {
-	return view ('/Browser/Ykien',['name'=>' Ykien !!!']);
-});
-
-
 
 // Member
-Route::get('/Member/Dangbai',function () {
-	return view ('/Member/Dangbai',['name'=>' Dangbai !!!']);
-});
-
-Route::get('/Member/Login',function () {
-	return view ('/Member/Login',['name'=>' Login !!!']);
-});
-
-Route::get('/Member/Logout',function () {
-	return view ('/Member/Logout',['name'=>' Logout !!!']);
-});
-
-Route::get('/Member/Thaydoithongtin_member',function () {
-	return view ('/Member/Thaydoithongtin_member',['name'=>' Thaydoithongtin_member !!!']);
-});
-
-Route::get('/Member/Traodoi_bientap',function () {
-	return view ('/Member/Traodoi_bientap',['name'=>' Traodoi_bientap !!!']);
-});
-
-Route::get('/Member/Update_bai',function () {
-	return view ('/Member/Update_bai',['name'=>' Update_bai !!!']);
+Route::group(['prefix'=>'/Member'],function(){
+	
+	Route::get('/Dangbai','ControllerName@Dangbai');
+	Route::get('/Login','ControllerName@login');
+	Route::get('/Logout','ControllerName@logout');
+	Route::get('/Update_bai','ControllerName@Update_bai');
 });
 
 
 
 // User
-Route::get('/User/login', function() {
-	return view('/User/Login',['name'=>' Login !!!']);
+Route::group(['prefix'=>'/User'],function(){
+   Route::get('/binhluan', 'ControllerName@binhluan' );
 });
-
-Route::get('/User/logout', function() {
-	return view('/User/Logout',['name'=>' Logout !!!']);
-});
-
-

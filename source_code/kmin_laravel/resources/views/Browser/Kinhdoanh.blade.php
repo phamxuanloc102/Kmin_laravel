@@ -1,12 +1,11 @@
-@extends('Footer.Footer')
-@extends('Content.Content')
-@extends('Header.Topheader')
-@section('title', 'The News Paper')
-@section('sidebar')
+@extends('Master.Master')
+@section('title', 'Page Title')
+
+ @section('sidebar')
 
    @parent
 
-      <p>Kmin laravel !.</p>
+      <p>Kmin laravel.</p>
 
    @endsection
 
@@ -14,6 +13,7 @@
 
       <h2>{{$name}}</h2>
 
-      <p>Xin Chào Mọi Người !</p>
+      <p>Well come Kmin laravel !!!.</p>
 
    @endsection
+
