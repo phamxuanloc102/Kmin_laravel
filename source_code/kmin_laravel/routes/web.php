@@ -27,15 +27,8 @@ Route::group(['prefix'=>'/Admin'],function(){
 });
 
 
-Route::get('/User/index',function()
-{
-	return view('/User/index');
-});
-
-Route::get('/User/profile',function()
-{
-	return view('/User/profile');
-});
+Route::get('/User/index', 'handleController@getForm');
+Route::post('/User/profile', 'handleController@getForm2');
 
 
 
@@ -79,3 +72,4 @@ Route::group(['prefix'=>'/Member'],function(){
 Route::group(['prefix'=>'/User'],function(){
    Route::get('/binhluan', 'ControllerName@binhluan' );
 });
+
