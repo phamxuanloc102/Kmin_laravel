@@ -17,59 +17,32 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+use app\admin;
+use Illuminate\Http\Request;
 
- // Admin
-Route::group(['prefix'=>'/Admin'],function(){
-	Route::get('/Kiemduyet','ControllerName@kiemduyet');
-	Route::get('/login','ControllerName@login');
-	Route::get('/logout','ControllerName@logout');
-	Route::get('/Thongtin_member','ControllerName@thongtin');
-});
-
-
-Route::get('/User/index', 'handleController@getForm');
-Route::post('/User/profile', 'handleController@getForm2');
-
-
-
+//admin
+	Route::group(['prefix'=>'Admin'], function () {
+		Route::get('/quanlybaiviet','Controller_Admin@quanlybaiviet');
+		Route::get('/quanlydanhmuc','Controller_Admin@quanlydanhmuc');
+		Route::get('/quanlykhachhang','Controller_Admin@quanlykhachhang');
+		Route::get('/thongke','Controller_Admin@thongke');
+		Route::get('/trangchinh','Controller_Admin@trangchinh');
+		Route::get('/dangnhap[','Controller_Admin@dangnhapadmin');
+		Route::post('/dangnhap','Controller_Admin@xulydangnhap');
+	});
 
 
-
-
-// Browser
-Route::group(['prefix'=>'/Browser'],function(){
-		Route::get('/Doisong','ControllerName@doisong');
-		Route::get('/Dulich','ControllerName@dulic');
-		Route::get('/Giaitri','ControllerName@giaitri');
-		Route::get('/Giaoduc','ControllerName@giaoduc');
-		Route::get('/Gocnhin','ControllerName@gocnhin');
-		Route::get('/Khoahoc','ControllerName@khoahoc');
-		Route::get('/Kinhdoanh','ControllerName@kinhdoanh');
-		Route::get('/Phapluat','ControllerName@phapluat');
-		Route::get('/Sohoa','ControllerName@sohoa');
-		Route::get('/Suckhoe','ControllerName@suckhoe');
-		Route::get('/Tamsu','ControllerName@tamsu');
-		Route::get('/Thegioi','ControllerName@thegioi');
-		Route::get('/Thethao','ControllerName@thethao');
-		Route::get('//Thoisu','ControllerName@thoisu');
-		Route::get('/Xe&doisong','ControllerName@xe');
-		Route::get('/Ykien','ControllerName@ykien');
-		
-});
-
-// Member
-Route::group(['prefix'=>'/Member'],function(){
-	
-	Route::get('/Dangbai','ControllerName@Dangbai');
-	Route::get('/Login','ControllerName@login');
-	Route::get('/Logout','ControllerName@logout');
-	Route::get('/Update_bai','ControllerName@Update_bai');
-});
-
-
-
-// User
-Route::group(['prefix'=>'/User'],function(){
-   Route::get('/binhluan', 'ControllerName@binhluan' );
-});
-
+//user
+	 Route::group(['prefix'=>'Home'],function(){
+	 	Route::get('/banggiadichvu','Controller_Home@banggiadichvu');
+	 	Route::get('/chothuematbang','Controller_Home@chothuematbang');
+	 	Route::get('/chothuenhanguyencan','Controller_Home@chothuenhanguyencan');
+	 	Route::get('/chothuephongtro','Controller_Home@chothuephongtro');
+	 	Route::get('/dangky','Controller_Home@dangky');
+	 	Route::get('/dangnhap','Controller_Home@dangnhap');
+	 	Route::get('/dangtin','Controller_Home@dangtin');
+	 	Route::get('/huongdan','Controller_Home@huongdan');
+	 	Route::get('/thanhtoan','Controller_Home@thanhtoan');
+	 	Route::get('/timnguoioghep','Controller_Home@timnguoioghep');
+	 	Route::get('/trangchu','Controller_Home@btrangchu');
+	 });

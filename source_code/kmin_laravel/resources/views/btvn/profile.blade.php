@@ -1,5 +1,4 @@
-
-@extends('Master.Master')
+@extends('masterdisplay.masterdisplay')
 @section('title', 'Page Title')
 	
  @section('content')
@@ -14,6 +13,5 @@
     	echo"<p></p>";
     	echo "<b>Địa chỉ :</b>".$address;
 	?>
-      
 	</center>
  @endsection

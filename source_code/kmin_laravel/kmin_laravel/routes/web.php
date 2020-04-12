@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/database/migrations/number', function(){
+	$results = DB::select('select * from member where id = 1', array(1));
+	return $results;
+});
